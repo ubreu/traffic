@@ -45,3 +45,4 @@ Thumbs.db
 firebase-debug.log*
 firebase-debug.*.log*
 .firebase/
+ui-debug.log
