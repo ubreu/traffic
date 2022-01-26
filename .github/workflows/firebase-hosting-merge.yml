@@ -23,7 +23,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: install firebase tools
       - name: build function
         run: npm ci && npm run build
         working-directory: functions
