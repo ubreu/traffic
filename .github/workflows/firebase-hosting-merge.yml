@@ -23,10 +23,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - name: install firebase tools
       - name: build function
         run: npm ci && npm run build
         working-directory: functions
       - name: deploy function
-        run: firebase deploy --only functions 
+        run: npm ci && ./node_modules/.bin/firebase deploy --only functions 
         env:
           FIREBASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
