@@ -23,10 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Clean temp directory
-        run: npm install
+      - name: deploy function
+        run: npm ci && npm run build && npm run deploy
         working-directory: functions
-      - uses: chrissank/deploy-firebase-functions@1.0.0
         env:
           FIREBASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TARGET: default
