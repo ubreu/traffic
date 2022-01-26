@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { AngularFireFunctions } from '@angular/fire/compat/functions';
 import { TrafficInfo } from '../domain/traffic-info';
 import { Observable } from 'rxjs';
 
-const URL = "https://trafficmapsrgssr.trafficintelligence.ch/api/event/GetEventsTrafficApi/46.27634554693529,5.704062499999999,47.120753018933755,12.3009375/11,12,13,14,90/1/5/2"
-
+const endpoint = 'trafficInfo'
 @Injectable({
   providedIn: 'root'
 })
 export class TrafficService {
 
-  constructor(private http: HttpClient) { }
+  constructor(public readonly functions: AngularFireFunctions) { }
 
   getTrafficInfo(): Observable<TrafficInfo> {
-      return this.http.get<TrafficInfo>(URL)
+      return this.functions.httpsCallable(endpoint, { timeout: 5_000 })({})
   }
 }

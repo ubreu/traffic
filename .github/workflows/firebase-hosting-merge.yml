@@ -7,7 +7,7 @@ name: Deploy to Firebase Hosting on merge
     branches:
       - main
 jobs:
-  build_and_deploy:
+  hosting_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,3 +18,15 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TRAFFIC_94F02 }}'
           channelId: live
           projectId: traffic-94f02
+      - run: 'npm ci && npm run build'
+  functions_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Clean temp directory
+        run: npm install
+        working-directory: functions
+      - uses: chrissank/deploy-firebase-functions@1.0.0
+        env:
+          FIREBASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET: default
