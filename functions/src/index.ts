@@ -12,7 +12,10 @@ export const trafficInfo = functions.https.onRequest((request, response) => {
       res.on("data", (d: any) => {
         data += d;
       });
-      res.on("end", () => response.status(200).send(data));
+      res.on("end", () => response.status(200).send({
+        "status" : "success",
+        "data" : data
+      }));
       res.on("error", () => response.sendStatus(400));
     });
   });
