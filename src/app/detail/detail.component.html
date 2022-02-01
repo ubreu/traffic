@@ -3,7 +3,8 @@
     <mat-card-subtitle>{{ entity.Dic.RoadNo }} - {{ entity.Dic.LastUpdated }}</mat-card-subtitle>
     <mat-card-content>
         <p>{{ entity.Dic.Description }}</p>
-        <a href="https://maps.google.com/?q={{ entity.Pos.Lat }},{{ entity.Pos.Lng}}" target="_blank">Show in Maps</a>
+        <a href="https://www.google.com/maps/@?api=1&map_action=map&center={{ entity.Pos.Lat }}%2C{{ entity.Pos.Lng}}&zoom=14&basemap=satellite&layer=traffic"
+            target="_blank">Show in Maps</a>
     </mat-card-content>
     <mat-divider inset></mat-divider>
 </mat-card>

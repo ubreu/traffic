@@ -1,0 +1,147 @@
+{
+    "Errors": [],
+    "TotalPages": 0,
+    "TotalRows": 5,
+    "PageSize": 0,
+    "IsAuthenicated": false,
+    "Entity": [
+        {
+            "Id": "Viasuisser_Viasuisse/2151495_TIC-Viasuisse/1",
+            "ApiType": null,
+            "Cat": 12,
+            "Name": "101 - Kantonsstrasse, Genf Richtung Meyrin",
+            "Pos": {
+                "Lat": 46.23505,
+                "Lng": 6.0502
+            },
+            "Dic": {
+                "LastUpdated": "01.02.2022 16:45:18",
+                "Description": "zwischen Mandement und Meyrin Stau, Verkehrsüberlastung",
+                "TimeStart": "",
+                "TimeStop": "",
+                "RoadNo": "101",
+                "WebCamUrl": "",
+                "Address": null,
+                "ZipCode": null,
+                "City": null,
+                "Trend": null,
+                "State": null,
+                "FreeSlots": null,
+                "OpeningHours": null,
+                "Jams": null,
+                "EntryHeight": null
+            }
+        },
+        {
+            "Id": "Viasuisser_Viasuisse/2151484_TIC-Viasuisse/1",
+            "ApiType": null,
+            "Cat": 13,
+            "Name": "A9 - Lausanne Richtung Pontarlier",
+            "Pos": {
+                "Lat": 46.73207,
+                "Lng": 6.38506
+            },
+            "Dic": {
+                "LastUpdated": "01.02.2022 18:29:11",
+                "Description": "zwischen Ballaigues und Grenzübergang Vallorbe Verkehrsüberlastung, stockender Verkehr",
+                "TimeStart": "",
+                "TimeStop": "",
+                "RoadNo": "A9",
+                "WebCamUrl": "",
+                "Address": null,
+                "ZipCode": null,
+                "City": null,
+                "Trend": null,
+                "State": null,
+                "FreeSlots": null,
+                "OpeningHours": null,
+                "Jams": null,
+                "EntryHeight": null
+            }
+        },
+        {
+            "Id": "Viasuisser_Viasuisse/2151518_TIC-Viasuisse/1",
+            "ApiType": null,
+            "Cat": 13,
+            "Name": "144 - Hauptstrasse, Rennaz Richtung Les Evouettes",
+            "Pos": {
+                "Lat": 46.3579,
+                "Lng": 6.87833
+            },
+            "Dic": {
+                "LastUpdated": "01.02.2022 18:12:00",
+                "Description": "zwischen Crebelley und Les Evouettes stockender Verkehr, Verkehrsüberlastung",
+                "TimeStart": "",
+                "TimeStop": "",
+                "RoadNo": "144",
+                "WebCamUrl": "",
+                "Address": null,
+                "ZipCode": null,
+                "City": null,
+                "Trend": null,
+                "State": null,
+                "FreeSlots": null,
+                "OpeningHours": null,
+                "Jams": null,
+                "EntryHeight": null
+            }
+        },
+        {
+            "Id": "Viasuisser_Viasuisse/2151483_TIC-Viasuisse/1",
+            "ApiType": null,
+            "Cat": 13,
+            "Name": "398 - Hauptstrasse, Lamone Richtung Ponte Tresa",
+            "Pos": {
+                "Lat": 45.97243,
+                "Lng": 8.86682
+            },
+            "Dic": {
+                "LastUpdated": "01.02.2022 18:06:28",
+                "Description": "zwischen Agno und Ponte Tresa stockender Verkehr, Verkehrsüberlastung",
+                "TimeStart": "",
+                "TimeStop": "",
+                "RoadNo": "398",
+                "WebCamUrl": "",
+                "Address": null,
+                "ZipCode": null,
+                "City": null,
+                "Trend": null,
+                "State": null,
+                "FreeSlots": null,
+                "OpeningHours": null,
+                "Jams": null,
+                "EntryHeight": null
+            }
+        },
+        {
+            "Id": "Viasuisser_Viasuisse/2151524_TIC-Viasuisse/1",
+            "ApiType": null,
+            "Cat": 13,
+            "Name": "A4 - Brunnen Richtung Zürich",
+            "Pos": {
+                "Lat": 47.31847,
+                "Lng": 8.44525
+            },
+            "Dic": {
+                "LastUpdated": "01.02.2022 18:36:15",
+                "Description": "zwischen Affoltern am Albis und Islisberg-Tunnel stockender Verkehr, Pannenfahrzeug, der rechte Fahrstreifen ist blockiert",
+                "TimeStart": "",
+                "TimeStop": "",
+                "RoadNo": "A4",
+                "WebCamUrl": "",
+                "Address": null,
+                "ZipCode": null,
+                "City": null,
+                "Trend": null,
+                "State": null,
+                "FreeSlots": null,
+                "OpeningHours": null,
+                "Jams": null,
+                "EntryHeight": null
+            }
+        }
+    ],
+    "Token": null,
+    "ReturnStatus": true,
+    "ReturnMessage": []
+}
