@@ -1,5 +1,5 @@
 export enum PathSegment {
-    DETAILS = 'details',
+    ENTRIES = 'entries',
     OVERVIEW = 'overview'
 }
 
@@ -7,8 +7,13 @@ export enum RouteParam {
     CATEGORY = 'category'
 }
 
+export const NavigationPath = {
+    empty: () => '/',
+    overview: () => `${PathSegment.OVERVIEW}`
+}
+
 export const RoutesPath = {
     EMPTY: '/',
-    DETAILS: `${PathSegment.DETAILS}/:${RouteParam.CATEGORY}`,
+    ENTRIES: `${PathSegment.ENTRIES}/:${RouteParam.CATEGORY}`,
     OVERVIEW: `${PathSegment.OVERVIEW}`
 }

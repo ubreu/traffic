@@ -7,17 +7,21 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverviewComponent } from './overview/overview.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 
 import { environment } from '../environments/environment';
 import { DetailComponent } from './detail/detail.component';
+import { EntryListComponent } from './entry-list/entry-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OverviewComponent,
-    DetailComponent
+    DetailComponent,
+    EntryListComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -26,6 +30,8 @@ import { DetailComponent } from './detail/detail.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatButtonModule,
+    MatCardModule,
     MatIconModule,
     MatListModule
   ],

@@ -1,0 +1,11 @@
+<div class="centered">
+    <section>
+        <div class="button-row">
+            <button mat-raised-button color="primary" (click)="backToOverview()">Back</button>
+        </div>
+    </section>
+
+    <div *ngFor="let entity of entities$ | async">
+        <app-detail [entity]="entity"></app-detail>
+    </div>
+</div>

@@ -1,20 +1,19 @@
 <div class="centered">
-
     <mat-nav-list>
         <div class="nav-item">
-            <a mat-list-item [routerLink]="['/details', 'conditions']">
+            <a mat-list-item [routerLink]="['/', PathSegment.ENTRIES, Category.CONDITION]">
                 <span class="material-icons">car_crash</span>
                 <span class="nav-text">Verkehrsbedingungen</span>
             </a>
         </div>
         <div class="nav-item">
-            <a mat-list-item [routerLink]="['/details', 'env']">
+            <a mat-list-item [routerLink]="['/', PathSegment.ENTRIES, Category.ENV]">
                 <span class="material-icons">ac_unit</span>
                 <span class="nav-text">Strassenzustand</span>
             </a>
         </div>
         <div class="nav-item">
-            <a mat-list-item [routerLink]="['/details', 'pass']">
+            <a mat-list-item [routerLink]="['/', PathSegment.ENTRIES, Category.PASS]">
                 <span class="material-icons">terrain</span>
                 <span class="nav-text">Pässe</span>
             </a>

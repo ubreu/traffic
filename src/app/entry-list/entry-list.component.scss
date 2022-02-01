@@ -1,0 +1,19 @@
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    width: 35em;
+}
+
+section {
+    display: table;
+}
+
+.button-row {
+    display: table-cell;
+    width: 35em;
+    align-items: center;
+}
+
+.button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+}

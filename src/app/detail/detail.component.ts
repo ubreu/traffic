@@ -1,26 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router'
-import { Observable } from 'rxjs'
-import { TrafficInfo } from '../domain/traffic-info'
-import { Category } from '../domain/traffic-info'
-import { RouteParam } from '../infra/path';
-import { TrafficService } from '../services/traffic.service'
+import { Component, Input, OnInit } from '@angular/core'
+import { TrafficEntity } from '../domain/traffic-info';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent {
 
-  info$!: Observable<TrafficInfo>
-  category: Category = Category.CONDITION
-  constructor(private route: ActivatedRoute, private trafficService: TrafficService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      this.category = params.get(RouteParam.CATEGORY) as Category
-      this.info$ = this.trafficService.getTrafficInfo(this.category)
-    })
-  }
+  @Input() entity!: TrafficEntity
+
 }
