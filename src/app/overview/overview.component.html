@@ -1,7 +1,23 @@
-<div class="content-wrapper">
-    <div class="container-wrapper">
-        <div class="container">
-            <p>{{ info | async }}</p>
+<div class="centered">
+
+    <mat-nav-list>
+        <div class="nav-item">
+            <a mat-list-item [routerLink]="['/details', 'conditions']">
+                <span class="material-icons">car_crash</span>
+                <span class="nav-text">Verkehrsbedingungen</span>
+            </a>
         </div>
-    </div>
+        <div class="nav-item">
+            <a mat-list-item [routerLink]="['/details', 'env']">
+                <span class="material-icons">ac_unit</span>
+                <span class="nav-text">Strassenzustand</span>
+            </a>
+        </div>
+        <div class="nav-item">
+            <a mat-list-item [routerLink]="['/details', 'pass']">
+                <span class="material-icons">terrain</span>
+                <span class="nav-text">Pässe</span>
+            </a>
+        </div>
+    </mat-nav-list>
 </div>

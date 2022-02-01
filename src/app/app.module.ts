@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverviewComponent } from './overview/overview.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 import { environment } from '../environments/environment';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OverviewComponent
+    OverviewComponent,
+    DetailComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -21,7 +25,9 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [
     { provide: USE_FUNCTIONS_EMULATOR, useValue: environment.useEmulators ? ['localhost', 5001] : undefined },

@@ -12,3 +12,9 @@ export interface Entity {
     Id: string,
     Name: string
 }
+
+export enum Category {
+    CONDITION = 'condition',
+    ENV = 'env',
+    PASS = 'pass'   
+}
