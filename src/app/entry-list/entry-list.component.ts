@@ -16,12 +16,14 @@ export class EntryListComponent implements OnInit {
 
   entities$!: Observable<TrafficEntity[]>
   category: Category = Category.CONDITION
+  loading = true
+
   constructor(private router: Router, private route: ActivatedRoute, private trafficService: TrafficService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.category = params.get(RouteParam.CATEGORY) as Category
-      this.entities$ = this.trafficService.getTrafficInfo(this.category).pipe(map(i => i.Entity))
+      this.entities$ = this.trafficService.getTrafficInfo(this.category).pipe(tap(i => this.loading = false), map(i => i.Entity))
     })
   }
 

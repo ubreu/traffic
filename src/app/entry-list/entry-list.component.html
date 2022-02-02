@@ -5,6 +5,8 @@
         </div>
     </section>
 
+    <mat-progress-spinner class="spinner" diameter="70" mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
+
     <div *ngFor="let entity of entities$ | async">
         <app-detail [entity]="entity"></app-detail>
     </div>
