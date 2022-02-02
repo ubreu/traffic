@@ -23,7 +23,11 @@ export class EntryListComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.category = params.get(RouteParam.CATEGORY) as Category
-      this.entities$ = this.trafficService.getTrafficInfo(this.category).pipe(tap(i => this.loading = false), map(i => i.Entity))
+      this.entities$ = this.trafficService.getTrafficInfo(this.category).pipe(
+        tap(i => this.loading = false),
+        map(i => i.Entity),
+        tap(results => results.sort((x, y) => x.Name < y.Name ? -1 : 1))
+      )
     })
   }
 
