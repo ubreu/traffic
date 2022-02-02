@@ -15,3 +15,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ### Development Firebase function
 
 In the `functions` directory run `npm run start` to start the function locally in the emulator.
+
+To override the debug mode and retrieve real data run `OVERRIDE_DEBUG_MODE=true npm run start`.
