@@ -30,5 +30,15 @@
                 </mat-card-content>
             </mat-card>
         </div>
+        <div class="nav-item">
+            <mat-card class="nav-entry mat-elevation-z6">
+                <mat-card-content>
+                    <a mat-list-item [routerLink]="['/', PathSegment.ENTRIES, Category.SHUTTLE]">
+                        <span class="material-icons">railway_alert</span>
+                        <span class="nav-text">Autoverlad</span>
+                    </a>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </mat-nav-list>
 </div>

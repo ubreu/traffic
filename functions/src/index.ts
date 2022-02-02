@@ -10,9 +10,10 @@ interface Category {
   [index: string]: string;
 }
 const CATEGORY_IDS = {} as Category
-CATEGORY_IDS["condition"] = "1,12,13,14,90"
+CATEGORY_IDS["condition"] = "11,12,13,14,90"
 CATEGORY_IDS["env"] = "21,90"
 CATEGORY_IDS["pass"] = "41,43,44,90"
+CATEGORY_IDS["shuttle"] = "61,62,63,64,90"
 
 const BASE_URL = "https://trafficmapsrgssr.trafficintelligence.ch/api/event/GetEventsTrafficApi/46.27634554693529,5.704062499999999,47.120753018933755,12.3009375/"
 

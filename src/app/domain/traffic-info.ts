@@ -29,5 +29,6 @@ export interface Position {
 export enum Category {
     CONDITION = 'condition',
     ENV = 'env',
-    PASS = 'pass'
+    PASS = 'pass',
+    SHUTTLE = 'shuttle'
 }
