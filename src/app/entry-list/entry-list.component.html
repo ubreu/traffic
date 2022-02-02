@@ -5,10 +5,29 @@
         </div>
     </section>
 
-    <mat-progress-spinner class="spinner" diameter="70" mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
+    <div *ngIf="filteredEntities$ | async as entities; else loading">
 
-    <div *ngFor="let entity of entities$ | async">
-        <app-detail [entity]="entity"></app-detail>
+        <form class="search-name-form">
+            <mat-form-field class="search-name-form-full-width" appearance="fill">
+                <mat-label>Name</mat-label>
+                <input type="text" placeholder="Wähle..." aria-label="Name" matInput [formControl]="searchControl"
+                    [matAutocomplete]="auto">
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option *ngFor="let entity of entities" [value]="entity.Name">
+                        {{entity.Name}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </form>
+
+        <div *ngFor="let entity of entities">
+            <app-detail [entity]="entity"></app-detail>
+        </div>
+
+        <mat-divider></mat-divider>
     </div>
-    <mat-divider *ngIf="!loading"></mat-divider>
+
+    <ng-template #loading>
+        <mat-progress-spinner class="spinner" diameter="70" mode="indeterminate"></mat-progress-spinner>
+    </ng-template>
 </div>

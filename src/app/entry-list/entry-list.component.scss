@@ -4,20 +4,18 @@
     width: 100%;
 }
 
-section {
-    display: table;
-}
-
 .button-row {
-    display: table-cell;
-    width: 35em;
-    align-items: center;
+    width: 100%;
 }
 
 .button-row .mat-button-base {
-    margin: 8px 8px 8px 0;
+    margin: 1rem 0;
 }
 
 .spinner {
     margin: 2rem auto;
+}
+
+.search-name-form-full-width {
+    width: 100%;
 }
