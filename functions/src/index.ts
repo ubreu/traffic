@@ -1,7 +1,7 @@
 import * as functions from "firebase-functions"
 import https = require("https")
-import fs = require('fs')
-import path = require('path')
+import fs = require("fs")
+import path = require("path")
 import c = require("cors")
 
 const cors = c({ origin: true })
@@ -23,8 +23,11 @@ export const trafficInfo = functions.https.onRequest((request, response) => {
       const category = request.body.data.category
       const url = BASE_URL + CATEGORY_IDS[category] + "/1/5/2"
 
-      if (!process.env.OVERRIDE_DEBUG_MODE && process.env.IS_FIREBASE_CLI && process.env.FIREBASE_DEBUG_MODE) {
-        const sample = JSON.parse(fs.readFileSync(path.resolve('./sample_data.json'), 'utf8'))
+      if (!process.env.OVERRIDE_DEBUG_MODE &&
+        process.env.IS_FIREBASE_CLI &&
+        process.env.FIREBASE_DEBUG_MODE) {
+        const sampleFile = path.resolve("./sample_data.json")
+        const sample = JSON.parse(fs.readFileSync(sampleFile, "utf8"))
         response.status(200).send({
           "status": "success",
           "data": sample,
