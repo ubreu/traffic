@@ -7,7 +7,11 @@
 
     <div *ngIf="filteredEntities$ | async as entities; else loading">
 
-        <form class="search-name-form">
+        <mat-card class="mat-elevation-z6" *ngIf="entities.length === 0">
+            Keine Einträge vorhanden. Gute Fahrt!
+        </mat-card>
+
+        <form class="search-name-form" *ngIf="entities.length > 0">
             <mat-form-field class="search-name-form-full-width" appearance="fill">
                 <mat-label>Name</mat-label>
                 <input type="text" placeholder="Wähle..." aria-label="Name" matInput [formControl]="searchControl"

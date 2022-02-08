@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router'
-import { Observable } from 'rxjs'
-import { combineLatestWith, debounceTime, distinctUntilChanged, map, tap, startWith } from 'rxjs/operators'
+import { Observable, of } from 'rxjs'
+import { catchError, combineLatestWith, debounceTime, distinctUntilChanged, map, tap, startWith, retry } from 'rxjs/operators'
 import { TrafficEntity } from '../domain/traffic-info'
 import { Category } from '../domain/traffic-info'
 import { NavigationPath, RouteParam } from '../infra/path';
@@ -27,8 +27,10 @@ export class EntryListComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.category = params.get(RouteParam.CATEGORY) as Category
       this.entities$ = this.trafficService.getTrafficInfo(this.category).pipe(
+        retry(1),
         map(i => i.Entity),
-        tap(results => results.sort((x, y) => x.Name < y.Name ? -1 : 1))
+        tap(results => results.sort((x, y) => x.Name < y.Name ? -1 : 1)),
+        catchError(e => of([]))
       )
 
       this.filteredEntities$ = this.searchControl.valueChanges.pipe(
