@@ -1,12 +1,12 @@
 # Traffic
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+This project is the basis behind the [traffic website](https://traffic.gleisdrei.ch/).
+
+This is a [firebase](https://console.firebase.google.com/) project with an [angular](https://angular.io/) frontend and a firebase function proxying the traffic API.
 
 ## Development Setup
 
 Run `npm i` to install the dependencies.
-
-Go to the [Firebase Console](https://console.firebase.google.com/). Click the gear icon next to project overview, create a new app and choose the type 'web'. Give the app a name and copy the config values provided to `src/environments/environment.[prod].ts`
 
 ### Development Angular application
 
@@ -17,3 +17,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 In the `functions` directory run `npm run start` to start the function locally in the emulator.
 
 To override the debug mode and retrieve real data run `OVERRIDE_DEBUG_MODE=true npm run start`.
+
+To add an intentional latency (e.g. 6 seconds) run `DEBUG_RESPONSE_DELAY=6000 npm run start`.

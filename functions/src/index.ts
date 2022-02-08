@@ -27,12 +27,15 @@ export const trafficInfo = functions.https.onRequest((request, response) => {
       if (!process.env.OVERRIDE_DEBUG_MODE &&
         process.env.IS_FIREBASE_CLI &&
         process.env.FIREBASE_DEBUG_MODE) {
+        const delay = Number(process.env.DEBUG_RESPONSE_DELAY) || 1000
         const sampleFile = path.resolve("./sample_data.json")
         const sample = JSON.parse(fs.readFileSync(sampleFile, "utf8"))
-        response.status(200).send({
-          "status": "success",
-          "data": sample,
-        })
+        setTimeout((() => {
+          response.status(200).send({
+            "status": "success",
+            "data": sample,
+          })
+        }), delay)
       } else {
         https.get(url, (res: any) => {
           res.on("data", (d: any) => {
